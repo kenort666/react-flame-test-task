@@ -1,5 +1,13 @@
-import './App.css';
+const App = () => (
+  <>
+    <header>
+      This is header
+    </header>
 
-const App = () => <div>123</div>;
+    <footer>
+      This is footer
+    </footer>
+  </>
+);
 
 export default App;
