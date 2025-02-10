@@ -10,10 +10,10 @@ export const Header = () => (
     <nav>
       <ul className={styles.navbar}>
         <li>
-          <NavLink to='/'>Peoples</NavLink>
+          <NavLink className={({ isActive }) => isActive ? styles.active : ''} to='/'>Peoples</NavLink>
         </li>
         <li>
-          <NavLink to='/favorites'>Favorites</NavLink>
+          <NavLink className={({ isActive }) => isActive ? styles.active : ''} to='/favorites'>Favorites</NavLink>
         </li>
       </ul>
     </nav>

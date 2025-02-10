@@ -8,11 +8,21 @@
 }
 
 .navbar {
-  font-family: 'StarJedi';
   display: flex;
   justify-content: center;
   align-items: center;
 
-  gap: 50px;
+  gap: 70px;
   font-size: 35px;
+
+  li {
+    &:hover {
+      transform: scale(1.09);
+      transition: 0.4s;
+    }
+  }
+}
+
+.active {
+  color: yellow;
 }
