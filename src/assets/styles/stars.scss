@@ -1,27 +1,18 @@
+@use 'sass:math';
+@use 'sass:string';
+
 @function multiple-box-shadow($n) {
-  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+  $value: '#{math.random(2000)}px #{math.random(2000)}px #FFF';
   @for $i from 2 through $n {
-    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+    $value: '#{$value} , #{math.random(2000)}px #{math.random(2000)}px #FFF';
   }
 
-  @return unquote($value);
+  @return string.unquote($value);
 }
 
 $shadows-small: multiple-box-shadow(700);
 $shadows-medium: multiple-box-shadow(200);
 $shadows-big: multiple-box-shadow(100);
-
-body {
-  height: 100vh;
-  background: radial-gradient(ellipse at bottom, #000000 0%, #090a0f 100%);
-  overflow: hidden;
-}
-
-.container {
-  padding: 0 20px;
-  max-width: 1070px;
-  margin: 0 auto;
-}
 
 .stars {
   width: 2px;
@@ -58,6 +49,7 @@ body {
     box-shadow: $shadows-medium;
   }
 }
+
 .stars3 {
   width: 2px;
   height: 2px;
