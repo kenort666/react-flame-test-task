@@ -9,6 +9,19 @@
   box-sizing: border-box;
 }
 
+
+ul, ul li {
+	list-style: none;
+}
+
+a, a:link, a:visited  {
+    text-decoration: none;
+}
+
+a:hover  {
+    text-decoration: none;
+}
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
