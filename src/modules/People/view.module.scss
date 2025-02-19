@@ -1,0 +1,20 @@
+.table {
+  border: 2px solid grey;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  border-collapse: collapse;
+
+  thead,
+  tbody,
+  tr {
+    display: contents;
+  }
+
+  th,
+  td {
+    padding: 12px;
+    justify-content: center;
+    border: 1px solid grey;
+  }
+}
