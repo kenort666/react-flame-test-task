@@ -22,7 +22,7 @@ export const PeopleView = () => {
       </thead>
       <tbody>
         <tr>
-          {people?.results.map((people) => <PeopleCell {...people} key={people.name} />)}
+          {people?.results.map((people) => <PeopleCell people={people} key={people.name} />)}
         </tr>
       </tbody>
     </table>

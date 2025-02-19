@@ -1,19 +1,16 @@
 import './PeopleCell.module.scss';
 
-interface PeopleCellProps extends PeopleInfo {
-  name: string;
-  height: string;
-  mass: string;
-  hair_color: string;
+interface PeopleCellProps {
+  people: PeopleInfo;
 }
 
-export const PeopleCell = ({ name, height, mass, hair_color }: PeopleCellProps) => {
+export const PeopleCell = ({ people }: PeopleCellProps) => {
   return (
     <>
-      <td>{name}</td>
-      <td>{height}</td>
-      <td>{mass}</td>
-      <td>{hair_color}</td>
+      <td>{people.name}</td>
+      <td>{people.height}</td>
+      <td>{people.mass}</td>
+      <td>{people.hair_color}</td>
     </>
   );
 };
