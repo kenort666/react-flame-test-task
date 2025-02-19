@@ -1,5 +1,6 @@
+import { API } from '@/utils/constants/api';
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://swapi.dev/api'
+  baseURL: API.BASE_URL
 });

@@ -1,8 +1,13 @@
 import './PeopleCell.module.scss';
 
-type PeopleCellType = Pick<PeopleInfo, 'name' | 'height' | 'mass' | 'hair_color'>;
+interface PeopleCellProps extends PeopleInfo {
+  name: string;
+  height: string;
+  mass: string;
+  hair_color: string;
+}
 
-export const PeopleCell = ({ name, height, mass, hair_color }: PeopleCellType) => {
+export const PeopleCell = ({ name, height, mass, hair_color }: PeopleCellProps) => {
   return (
     <>
       <td>{name}</td>
