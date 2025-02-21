@@ -13,8 +13,13 @@
 
   th,
   td {
-    padding: 12px;
-    justify-content: center;
     border: 1px solid grey;
+    align-content: center;
+    text-align: center;
+    height: 53px;
   }
+}
+
+.loading {
+  text-align: center;
 }

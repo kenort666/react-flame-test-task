@@ -7,7 +7,7 @@ export const PeopleView = () => {
   const { people, loading } = usePeople();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <h1 className={styles.loading}>Loading...</h1>;
   }
 
   return (
@@ -17,7 +17,7 @@ export const PeopleView = () => {
           <th>Name</th>
           <th>Height</th>
           <th>Mass</th>
-          <th>Gender</th>
+          <th>Hair Color</th>
           <th>
             Add Favorite<br />/Remove favorite
           </th>

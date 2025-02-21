@@ -1,3 +1,4 @@
+import { Button } from '@/components';
 import './PeopleCell.module.scss';
 
 interface PeopleCellProps {
@@ -11,7 +12,7 @@ export const PeopleCell = ({ people }: PeopleCellProps) => {
       <td>{people.height}</td>
       <td>{people.mass}</td>
       <td>{people.hair_color}</td>
-      <button type='button'>Добавить/Удалить</button>
+      <td><Button variant='add'>Добавить</Button></td>
     </>
   );
 };
