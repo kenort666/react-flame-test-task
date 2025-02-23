@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { PeopleCell } from './components/PeopleCell/PeopleCell';
 import { usePeople } from './hooks/usePeople';
 
@@ -25,7 +26,7 @@ export const PeopleView = () => {
       </thead>
       <tbody>
         <tr>
-          {people?.results.map((people) => <PeopleCell people={people} key={people.name} />)}
+          {people?.results.map((people, index) => <PeopleCell people={people} key={index} />)}
         </tr>
       </tbody>
     </table>
