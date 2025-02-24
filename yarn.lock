@@ -916,6 +916,13 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.32.1.tgz#512db088df67afee8f07183cdf8c9eecd64f6ef8"
   integrity sha512-ar80GhdZb4DgmW3myIS9nRFYcpJRSME8iqWgzH2i44u+IdrzmiXVxeFnExQ5v4JYUSpg94bWjevMG8JHf1Da5Q==
 
+"@siberiacancode/reactuse@^0.0.94":
+  version "0.0.94"
+  resolved "https://registry.yarnpkg.com/@siberiacancode/reactuse/-/reactuse-0.0.94.tgz#7c5e367277d3e56bcd51ee9f9c882ef05590a1c8"
+  integrity sha512-ZRb3SrCG2XhIftg8J9j5URyObNkBeUo2vZw5JXWaSgPROhTnFlQk3U2YGqN46xR5gOjbjqJmVa8QpJat6M5ibQ==
+  dependencies:
+    screenfull "^6.0.2"
+
 "@stylistic/eslint-plugin@^3.0.0":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@stylistic/eslint-plugin/-/eslint-plugin-3.0.1.tgz#ec85816a3b4e75c34293160b2784e6a4bdce6664"
@@ -5233,6 +5240,11 @@ scheduler@^0.25.0:
   version "0.25.0"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.25.0.tgz#336cd9768e8cceebf52d3c80e3dcf5de23e7e015"
   integrity sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA==
+
+screenfull@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/screenfull/-/screenfull-6.0.2.tgz#3dbe4b8c4f8f49fb8e33caa8f69d0bca730ab238"
+  integrity sha512-AQdy8s4WhNvUZ6P8F6PB21tSPIYKniic+Ogx0AacBMjKP1GUHN2E9URxQHtCusiwxudnCKkdy4GrHXPPJSkCCw==
 
 scslre@^0.3.0:
   version "0.3.0"

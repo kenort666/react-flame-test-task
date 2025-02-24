@@ -1,7 +1,7 @@
-import { PeopleView } from '@/modules/People/view';
-
-export const Favorites = () => (
-  <section>
-    <PeopleView />
-  </section>
-);
+export const Favorites = () => {
+  return (
+    <section>
+      <div>favorites</div>
+    </section>
+  );
+};
