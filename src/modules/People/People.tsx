@@ -2,9 +2,9 @@
 import { PeopleCell } from './components/PeopleCell/PeopleCell';
 import { usePeople } from './hooks/usePeople';
 
-import styles from './view.module.scss';
+import styles from './People.module.scss';
 
-export const PeopleView = () => {
+export const People = () => {
   const { people, loading } = usePeople();
 
   if (loading) {
@@ -20,7 +20,9 @@ export const PeopleView = () => {
           <th>Mass</th>
           <th>Hair Color</th>
           <th>
-            Add Favorite<br />/Remove favorite
+            Add Favorite
+            <br />
+            /Remove favorite
           </th>
         </tr>
       </thead>

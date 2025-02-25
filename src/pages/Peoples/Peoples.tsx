@@ -1,10 +1,10 @@
-import { PeopleView } from '@/modules/People/view';
+import { People } from '@/modules/People/People';
 import styles from './Peoples.module.scss';
 
 export const Peoples = () => {
   return (
     <section className={styles.section}>
-      <PeopleView />
+      <People />
     </section>
   );
 };

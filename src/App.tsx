@@ -8,10 +8,10 @@ import '@/assets/styles/globals.scss';
 export type FavoritePeople = PeopleInfo;
 
 export const App = () => {
-  const [favorites, setFavorites] = useState<FavoritePeople[]>([]);
+  const [favorite, setFavorite] = useState<FavoritePeople[]>([]);
 
   const addNewFavorite = (newFavorite: FavoritePeople) => {
-    setFavorites([...favorites, newFavorite]);
+    setFavorite([...favorite, newFavorite]);
     localStorage.setItem(newFavorite.name, JSON.stringify(newFavorite));
   };
 
@@ -26,7 +26,7 @@ export const App = () => {
       </div>
 
       <div className='container'>
-        <Outlet context={{ favorites, addNewFavorite }} />
+        <Outlet context={{ favorite, addNewFavorite }} />
       </div>
     </main>
   );

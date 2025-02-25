@@ -1,5 +1,6 @@
 import { Button } from '@/components';
-import { useFavorite } from '@/hooks/useFavorite';
+import { useFavorite } from '@/hooks/outletContext/useFavorite';
+import { isPeopleInList } from '../../helpers/isPeopleInList';
 import './PeopleCell.module.scss';
 
 interface PeopleCellProps {
@@ -9,7 +10,7 @@ interface PeopleCellProps {
 export const PeopleCell = ({ people }: PeopleCellProps) => {
   const { favorite, addNewFavorite } = useFavorite();
 
-  console.log(favorite);
+  const item = isPeopleInList(favorite, people);
 
   return (
     <>
@@ -17,7 +18,17 @@ export const PeopleCell = ({ people }: PeopleCellProps) => {
       <td>{people.height}</td>
       <td>{people.mass}</td>
       <td>{people.hair_color}</td>
-      <td><Button variant='add' onClick={() => addNewFavorite(people)}>Добавить</Button></td>
+      <td>
+        {item ? (
+          <Button variant='delete' type='button'>
+            Удалить из списка
+          </Button>
+        ) : (
+          <Button variant='add' type='button' onClick={() => addNewFavorite(people)}>
+            Добавить в список
+          </Button>
+        )}
+      </td>
     </>
   );
 };

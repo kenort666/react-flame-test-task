@@ -1,7 +1,7 @@
 import { api } from '../../../instance';
 
 export interface GetPeopleIdParams {
-  id: string
+  id: string;
 }
 
 export type GetPeopleIdConfig = AxiosRequestConfig<GetPeopleIdParams>;
