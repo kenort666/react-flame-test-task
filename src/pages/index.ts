@@ -1,2 +1,2 @@
 export * from './Favorites/Favorites';
-export * from './Peoples/Peoples';
+export * from './People/Peoples';

@@ -1,2 +1,2 @@
-export * from './People/People';
 export * from './SearchPeople/SearchPeople';
+export * from './Table/Table';

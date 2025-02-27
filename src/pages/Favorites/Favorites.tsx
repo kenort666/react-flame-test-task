@@ -1,7 +1,9 @@
+import { Table } from '@/modules';
+
 export const Favorites = () => {
   return (
     <section>
-      <div>favorites</div>
+      <Table />
     </section>
   );
 };

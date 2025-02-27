@@ -1,9 +1,7 @@
 import { Header } from '@/components';
 
 import { useState } from 'react';
-import { Outlet } from 'react-router';
-
-import '@/assets/styles/globals.scss';
+import { Outlet, Routes } from 'react-router';
 
 export type FavoritePeople = PeopleInfo;
 
@@ -15,19 +13,13 @@ export const App = () => {
     localStorage.setItem(newFavorite.name, JSON.stringify(newFavorite));
   };
 
+  const removeFavorite = (name: string) => {
+    setFavorite(favorite.filter((item) => item.name !== name));
+  };
+
   return (
     <main>
-      <Header />
-
-      <div>
-        <div className='stars' />
-        <div className='stars2' />
-        <div className='stars3' />
-      </div>
-
-      <div className='container'>
-        <Outlet context={{ favorite, addNewFavorite }} />
-      </div>
+      <Routes />
     </main>
   );
 };
