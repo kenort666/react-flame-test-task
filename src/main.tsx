@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router';
-import { router } from '../router';
-import '@/assets/styles/globals.scss';
-import App from './App';
+import { router } from './router/Router';
 
-createRoot(document.getElementById('root')!).render(<App />);
+import '@/assets/styles/globals.scss';
+
+createRoot(document.getElementById('root')!).render(<RouterProvider router={router} />);

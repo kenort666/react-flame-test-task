@@ -48,6 +48,12 @@
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.11"
   },
+  "lint-staged": {
+    "*.{ts, tsx}": [
+      "eslint",
+      "prettier --write --ignore-unknown"
+    ]
+  },
   "config": {
     "commitizen": {
       "path": "cz-customizable"

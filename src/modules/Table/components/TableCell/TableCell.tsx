@@ -1,31 +1,35 @@
-import { Button } from '@/components';
-import { isPeopleInFavorites } from '../../helpers/isPeopleInList';
+import { Button } from '@/shared/Button/Button';
+import { useOutletContext } from 'react-router';
+import { isPeopleInFavorites } from '../../helpers/isPeopleInFavorites';
+
 import './TableCell.module.scss';
 
 interface TableCellProps {
-  people: PeopleInfo;
+  item: PeopleInfo;
 }
 
-export const TableCell = ({ people }: TableCellProps) => {
-  // const item = isPeopleInFavorites(favorite, people);
+export const TableCell = ({ item }: TableCellProps) => {
+  const { favorite, addFavorite, removeFavorite } = useOutletContext<any>();
+
+  const isInFavorites = isPeopleInFavorites(item, favorite);
 
   return (
-    <>
-      <td>{people.name}</td>
-      <td>{people.height}</td>
-      <td>{people.mass}</td>
-      <td>{people.hair_color}</td>
+    <tr>
+      <td>{item.name}</td>
+      <td>{item.height}</td>
+      <td>{item.mass}</td>
+      <td>{item.hair_color}</td>
       <td>
-        {/* {!item ? (
-          <Button variant='add' type='button' onClick={() => addNewFavorite(people)}>
-            Добавить в список
-          </Button>
-        ) : (
-          <Button variant='delete' type='button' onClick={() => removeFavorite(people.name)}>
+        {isInFavorites ? (
+          <Button variant='delete' type='button' onClick={() => removeFavorite(item.name)}>
             Удалить из списка
           </Button>
-        )} */}
+        ) : (
+          <Button variant='add' type='button' onClick={() => addFavorite(item)}>
+            Добавить в список
+          </Button>
+        )}
       </td>
-    </>
+    </tr>
   );
 };
