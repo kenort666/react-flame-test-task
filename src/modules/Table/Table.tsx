@@ -10,6 +10,8 @@ type TableProps =
 export const Table = (props: TableProps) => {
   const data = 'people' in props ? props.people.results : (props.favorite ?? []);
 
+  if (data.length === 0) return <div className='status'>No favorites added yet.</div>;
+
   return (
     <table className={styles.table}>
       <thead>
@@ -18,11 +20,7 @@ export const Table = (props: TableProps) => {
           <th>Height</th>
           <th>Mass</th>
           <th>Hair Color</th>
-          <th>
-            Add Favorite
-            <br />
-            /Remove favorite
-          </th>
+          <th>Add/Remove Favorite</th>
         </tr>
       </thead>
       <tbody>

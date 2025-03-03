@@ -2,8 +2,6 @@ import { Button } from '@/shared/Button/Button';
 import { useOutletContext } from 'react-router';
 import { isPeopleInFavorites } from '../../helpers/isPeopleInFavorites';
 
-import './TableCell.module.scss';
-
 interface TableCellProps {
   item: PeopleInfo;
 }

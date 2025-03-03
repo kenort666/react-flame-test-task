@@ -1,12 +1,18 @@
-import { Table } from '@/modules';
-import { useOutletContext } from 'react-router';
+import { SearchPeople, Table } from '@/modules';
+import { usePeople } from '@/modules/Table/hooks/usePeople';
+
+import styles from './People.module.scss';
 
 export const People = () => {
-  const { people } = useOutletContext<any>();
+  const { people, loading } = usePeople();
+
+  if (loading) return <div className='status'>Loading...</div>;
+  if (!people) return <div className='status'>No data</div>;
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <Table type='people' people={people} />
+      <SearchPeople />
     </div>
   );
 };

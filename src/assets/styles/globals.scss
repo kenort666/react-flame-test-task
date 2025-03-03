@@ -7,6 +7,7 @@
   background: radial-gradient(ellipse at bottom, #000000 0%, #090a0f 100%);
   font-family: 'StarJedi';
   overflow: hidden;
+  color: #fff;
 }
 
 a {
@@ -14,8 +15,17 @@ a {
   color: #fff;
 }
 
+.status {
+  text-align: center;
+  font-size: 32px;
+  color: #fff;
+}
+
 .container {
-  padding: 0 20px;
-  max-width: 1200px;
+  max-width: 1260px;
   margin: 0 auto;
+}
+
+label {
+  font-size: 20px;
 }
