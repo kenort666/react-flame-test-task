@@ -916,10 +916,10 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.32.1.tgz#512db088df67afee8f07183cdf8c9eecd64f6ef8"
   integrity sha512-ar80GhdZb4DgmW3myIS9nRFYcpJRSME8iqWgzH2i44u+IdrzmiXVxeFnExQ5v4JYUSpg94bWjevMG8JHf1Da5Q==
 
-"@siberiacancode/reactuse@^0.0.94":
-  version "0.0.94"
-  resolved "https://registry.yarnpkg.com/@siberiacancode/reactuse/-/reactuse-0.0.94.tgz#7c5e367277d3e56bcd51ee9f9c882ef05590a1c8"
-  integrity sha512-ZRb3SrCG2XhIftg8J9j5URyObNkBeUo2vZw5JXWaSgPROhTnFlQk3U2YGqN46xR5gOjbjqJmVa8QpJat6M5ibQ==
+"@siberiacancode/reactuse@^0.0.103":
+  version "0.0.103"
+  resolved "https://registry.yarnpkg.com/@siberiacancode/reactuse/-/reactuse-0.0.103.tgz#9dd7663a7aedd2955900c3f478f6ad0e541b02ed"
+  integrity sha512-K/4zxFd9e/1VBTuFRMmGE2YVwtLUM6mqQtuzaXPPTYtPtUxl8ddKukpQXObSi+5bW9JTe5+1u2TU7Gx9Gxqi9w==
   dependencies:
     screenfull "^6.0.2"
 

@@ -3,9 +3,10 @@ import { useLocalStorage } from '@siberiacancode/reactuse';
 import { useState } from 'react';
 import { Outlet } from 'react-router';
 import { Header } from './Header/Header';
+import { LOCAL_STORAGE_KEYS } from './utils/constants/keys';
 
 export const App = () => {
-  const { value, set } = useLocalStorage<FavoritePeople[]>('favorites', []);
+  const { value, set } = useLocalStorage<FavoritePeople[]>(LOCAL_STORAGE_KEYS.FAVORITES, []);
 
   const [favorite, setFavorite] = useState<FavoritePeople[]>(value ?? []);
 

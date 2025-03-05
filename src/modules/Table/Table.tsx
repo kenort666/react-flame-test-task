@@ -26,7 +26,7 @@ export const Table = (props: TableProps) => {
       <tbody>
         {data.map((item, index) => (
           // eslint-disable-next-line react/no-array-index-key
-          <TableCell key={index} item={item} />
+          <TableCell item={item} key={index} />
         ))}
       </tbody>
     </table>
