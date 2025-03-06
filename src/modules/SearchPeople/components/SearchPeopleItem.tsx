@@ -13,7 +13,7 @@ export const SearchPeopleItem = ({ people }: SearchPeopleItemProps) => {
     <div className={styles.item}>
       <div>{people.name}</div>
       <Link style={{ color: 'black' }} to={`/people/${id}`}>
-        {people.url}
+        Перейти на персонажа
       </Link>
     </div>
   );

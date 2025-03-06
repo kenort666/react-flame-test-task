@@ -1,17 +1,28 @@
 import { Input } from '@/shared/Input/Input';
 import { getPeople } from '@/utils/api/axios/requests/people';
-import { useQuery } from '@siberiacancode/reactuse';
+import { useDebounceValue, useQuery } from '@siberiacancode/reactuse';
 import { useState } from 'react';
 import { SearchPeopleItem } from './components/SearchPeopleItem';
+
 import styles from './SearchPeople.module.scss';
 
 export const SearchPeople = () => {
-  const [searchValue, setSearchValue] = useState('dar');
-  const { data, isLoading } = useQuery(() => getPeople({ config: { params: { search: searchValue } } }));
+  const [searchValue, setSearchValue] = useState<string>('');
+  const debouncedValue = useDebounceValue(searchValue, 500);
 
-
-  if (isLoading) return <div className='status'>Loading...</div>
-
+  const { data, isLoading } = useQuery(
+    () =>
+      getPeople({
+        config: {
+          params: {
+            search: debouncedValue
+          }
+        }
+      }),
+    {
+      keys: ['searchValue', debouncedValue]
+    }
+  );
 
   return (
     <div className={styles.searchPeopleWrapper}>
@@ -21,7 +32,9 @@ export const SearchPeople = () => {
         placeholder='Поиск'
         label='Поиск по имени'
       />
-      {data?.data.results.map((people, index) => <SearchPeopleItem people={people} key={index} />)}
+      {isLoading && <div className='status'>Loading...</div>}
+      {data &&
+        data.data.results.map((people, index) => <SearchPeopleItem people={people} key={index} />)}
     </div>
   );
 };
