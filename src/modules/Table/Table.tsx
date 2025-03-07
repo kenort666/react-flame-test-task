@@ -5,12 +5,19 @@ import styles from './Table.module.scss';
 
 type TableProps =
   | { type: 'people'; people: People }
+  | { type: 'peopleInfo'; peopleInfo: PeopleInfo }
   | { type: 'favorite'; favorite: FavoritePeople[] };
 
 export const Table = (props: TableProps) => {
-  const data = 'people' in props ? props.people.results : (props.favorite ?? []);
+  const data =
+    'people' in props
+      ? props.people.results
+      : 'favorite' in props
+        ? props.favorite
+        : (props.peopleInfo ?? []);
 
-  if (data.length === 0) return <div className='status'>No favorites added yet.</div>;
+  if (Array.isArray(data) && data.length === 0)
+    return <div className='status'>No favorites added yet.</div>;
 
   return (
     <table className={styles.table}>
@@ -24,10 +31,14 @@ export const Table = (props: TableProps) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((item, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <TableCell item={item} key={index} />
-        ))}
+        {Array.isArray(data) ? (
+          data.map((peopleItem, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <TableCell people={peopleItem} key={index} />
+          ))
+        ) : (
+          <TableCell people={data} />
+        )}
       </tbody>
     </table>
   );

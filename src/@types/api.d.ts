@@ -24,5 +24,5 @@ interface People {
   results: PeopleInfo[];
 }
 
-
 type PeopleResponse = People;
+type PeopleInfoResponse = PeopleInfo;

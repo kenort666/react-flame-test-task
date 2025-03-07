@@ -7,7 +7,7 @@ import { SearchPeopleItem } from './components/SearchPeopleItem';
 import styles from './SearchPeople.module.scss';
 
 export const SearchPeople = () => {
-  const [searchValue, setSearchValue] = useState<string>('');
+  const [searchValue, setSearchValue] = useState('');
   const debouncedValue = useDebounceValue(searchValue, 500);
 
   const { data, isLoading } = useQuery(

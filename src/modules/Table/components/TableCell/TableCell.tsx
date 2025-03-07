@@ -3,27 +3,27 @@ import { useOutletContext } from 'react-router';
 import { isPeopleInFavorites } from '../../helpers/isPeopleInFavorites';
 
 interface TableCellProps {
-  item: PeopleInfo;
+  people: PeopleInfo;
 }
 
-export const TableCell = ({ item }: TableCellProps) => {
+export const TableCell = ({ people }: TableCellProps) => {
   const { favorite, addFavorite, removeFavorite } = useOutletContext<any>();
 
-  const isInFavorites = isPeopleInFavorites(item, favorite);
+  const isInFavorites = isPeopleInFavorites(people, favorite);
 
   return (
     <tr>
-      <td>{item.name}</td>
-      <td>{item.height}</td>
-      <td>{item.mass}</td>
-      <td>{item.hair_color}</td>
+      <td>{people.name}</td>
+      <td>{people.height}</td>
+      <td>{people.mass}</td>
+      <td>{people.hair_color}</td>
       <td>
         {isInFavorites ? (
-          <Button variant='delete' type='button' onClick={() => removeFavorite(item.name)}>
+          <Button variant='delete' type='button' onClick={() => removeFavorite(people.name)}>
             Удалить из списка
           </Button>
         ) : (
-          <Button variant='add' type='button' onClick={() => addFavorite(item)}>
+          <Button variant='add' type='button' onClick={() => addFavorite(people)}>
             Добавить в список
           </Button>
         )}

@@ -7,4 +7,4 @@ export interface GetPeopleIdParams {
 export type GetPeopleIdConfig = AxiosRequestConfig<GetPeopleIdParams>;
 
 export const getPeopleId = async ({ params, config }: GetPeopleIdConfig) =>
-  api.get(`/people/${params.id}`, config);
+  api.get<PeopleInfoResponse>(`/people/${params.id}`, config);
