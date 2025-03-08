@@ -1,5 +1,5 @@
+import { useFavoriteCtx } from '@/hooks/useFavoriteCtx';
 import { Button } from '@/shared/Button/Button';
-import { useOutletContext } from 'react-router';
 import { isPeopleInFavorites } from '../../helpers/isPeopleInFavorites';
 
 interface TableCellProps {
@@ -7,7 +7,7 @@ interface TableCellProps {
 }
 
 export const TableCell = ({ people }: TableCellProps) => {
-  const { favorite, addFavorite, removeFavorite } = useOutletContext<any>();
+  const { favorite, addFavorite, removeFavorite } = useFavoriteCtx();
 
   const isInFavorites = isPeopleInFavorites(people, favorite);
 
