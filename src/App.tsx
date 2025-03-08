@@ -2,7 +2,7 @@ import type { FavoritePeople } from './pages';
 import { useLocalStorage } from '@siberiacancode/reactuse';
 import { useState } from 'react';
 import { Outlet } from 'react-router';
-import { Header } from './Header/Header';
+import { Header } from './layout/Header/Header';
 import { LOCAL_STORAGE_KEYS } from './utils/constants/keys';
 
 export const App = () => {
